@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>אות · הרשמה</title>
+<meta name="description" content="אות: התראות על עיקול, פירוק, כינוס נכסים ושיעבוד בחברות שאתם עובדים איתן, ממאגרים ממשלתיים רשמיים.">
+<link rel="icon" href="https://ot-site-five.vercel.app/icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+  :root{--navy:#0B1F3A;--navy2:#13305a;--red:#E11D2E;--ink:#0F172A;--mute:#475569;--muted:#64748b;--line:#E2E8F0;--bg:#F6F8FB;--r:#dc2626;--rbg:#fef2f2;--o:#ea580c;--obg:#fff7ed;--b:#2563eb;--bbg:#eff6ff;--g:#16a34a;--gbg:#f0fdf4}
+  *{box-sizing:border-box} body{margin:0;font-family:Heebo,Arial,sans-serif;background:#e9eef5;color:var(--ink);line-height:1.55}
+  .page{max-width:1200px;margin:0 auto;padding:24px 16px 60px}
+  h1.t{font-size:24px;margin:0 0 4px}.lead0{color:var(--muted);margin:0 0 16px}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+  .tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font:inherit;font-weight:700;cursor:pointer}
+  .tab.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .view{display:none}.view.on{display:block}
+  .frame{max-width:460px;margin:0 auto;background:#fff;border-radius:22px;box-shadow:0 12px 34px rgba(15,23,42,.14);overflow:hidden}
+  .wide{max-width:640px}
+  /* brand */
+  .lock{display:flex;align-items:center;gap:10px}.lock svg{width:38px;height:38px}
+  .lock .w{font-weight:900;font-size:26px;letter-spacing:-.5px}
+  .lock .d{font-size:11px;line-height:1.25;opacity:.8}
+  /* email */
+  .em{background:#f8fafc;font-size:14px}
+  .eh{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:20px 20px 16px}
+  .eh .lock .w{color:#fff}
+  .eh h2{margin:14px 0 0;font-size:20px}.eh .dt{font-size:12px;color:#cbd5e1}
+  .eb{padding:14px 12px 6px}
+  .sec{font-size:11.5px;font-weight:800;color:var(--muted);letter-spacing:.5px;margin:8px 4px 8px}
+  .ev{background:#fff;border-radius:12px;padding:10px 12px;margin-bottom:8px;border-right:4px solid var(--r);box-shadow:0 1px 5px rgba(15,23,42,.05)}
+  .ev.o{border-right-color:var(--o)}.ev.b{border-right-color:var(--b)}.ev.gd{border-right-color:#ca8a04}
+  .ev .r{display:flex;justify-content:space-between;align-items:center;gap:6px}
+  .tag{display:inline-block;font-weight:800;font-size:12px;border-radius:8px;padding:3px 10px}
+  .tag.r{background:var(--rbg);color:var(--r)}.tag.o{background:var(--obg);color:var(--o)}.tag.b{background:var(--bbg);color:var(--b)}.tag.gd{background:#fefce8;color:#a16207}
+  .nm{font-weight:800;font-size:14.5px;margin-top:4px}.mt{color:var(--muted);font-size:12px}
+  .add{font-size:11px;font-weight:800;color:var(--navy);background:#e0f2fe;border-radius:7px;padding:3px 8px;white-space:nowrap}
+  .kpis{display:flex;gap:8px;margin-bottom:10px}
+  .kpi{flex:1;background:#fff;border-radius:12px;padding:10px 6px;text-align:center;box-shadow:0 1px 5px rgba(15,23,42,.05)}
+  .kpi .n{font-size:24px;font-weight:900;line-height:1.1}.kpi small{color:var(--muted);font-size:11px}
+  .quiet{background:#fff;border-radius:12px;padding:10px 12px;margin-bottom:8px;color:var(--muted);font-size:13px;border-right:4px solid var(--g)}
+  .ebtn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;font-size:13px;border-radius:10px;padding:9px 14px;margin:4px 0 12px 6px}
+  .ebtn.l{background:#e0f2fe;color:var(--navy)}
+  .ef{background:var(--navy);color:#94a3b8;font-size:11px;padding:14px 18px;line-height:1.6}.ef b{color:#e2e8f0}
+  /* form */
+  .fh{padding:22px 22px 6px;text-align:center}
+  .fh .lock{justify-content:center}.fh .lock .w{color:var(--navy)}
+  .slogan{font-weight:800;font-size:22px;line-height:1.25;color:var(--navy);margin:14px 0 4px}.slogan span{color:var(--red)}
+  .sub{color:var(--mute);font-size:14px}
+  form{padding:10px 22px 24px}
+  .fld{margin-bottom:14px}
+  .fld label{display:block;font-weight:700;font-size:14px;margin-bottom:5px}
+  .fld label .req{color:var(--red)}
+  .fld .hint{font-size:12px;color:var(--muted);margin-top:4px}
+  input[type=text],input[type=email],input[type=tel],select{width:100%;font:inherit;font-size:15px;padding:11px 12px;border:1.5px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);direction:rtl}
+  input:focus,select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,31,58,.08)}
+  .bad input,.bad select{border-color:var(--red)}
+  .err{display:none;color:var(--red);font-size:12.5px;margin-top:4px;font-weight:600}
+  .bad .err{display:block}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{flex:1;min-width:88px;border:1.5px solid var(--line);border-radius:11px;padding:10px 6px;text-align:center;cursor:pointer;font-weight:700;font-size:14px;user-select:none;background:#fff}
+  .chip.on{border-color:var(--navy);background:var(--navy);color:#fff}
+  .chip small{display:block;font-weight:400;font-size:11px;opacity:.75}
+  .co-row{display:flex;gap:6px;margin-bottom:6px}
+  .co-row input{flex:1}
+  .co-row button{border:1.5px solid var(--line);background:#fff;border-radius:10px;width:42px;font-size:18px;cursor:pointer;color:var(--muted)}
+  .addco{border:1.5px dashed #94a3b8;background:#f8fafc;border-radius:11px;padding:9px;width:100%;font:inherit;font-weight:700;color:var(--navy);cursor:pointer}
+  .terms{background:var(--bg);border-radius:11px;padding:10px 12px;font-size:13px}
+  .terms details summary{cursor:pointer;font-weight:700;color:var(--navy)}
+  .terms p{margin:8px 0 0;color:var(--mute);font-size:12.5px}
+  .chk{display:flex;gap:8px;align-items:flex-start;font-size:14px;margin-top:10px}
+  .chk input{margin-top:4px;width:17px;height:17px;accent-color:var(--navy)}
+  .submit{width:100%;background:var(--navy);color:#fff;border:0;border-radius:12px;padding:14px;font:inherit;font-weight:800;font-size:17px;cursor:pointer;margin-top:8px}
+  .done{display:none;padding:30px 22px;text-align:center}
+  .done h3{color:var(--navy);font-size:22px;margin:10px 0}
+  /* personal */
+  .ph{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:20px 22px}
+  .ph .lock .w{color:#fff}
+  .ph h2{margin:14px 0 2px;font-size:21px}.ph .s{color:#cbd5e1;font-size:13px}
+  .pb{padding:16px 18px 20px;background:#f8fafc}
+  .stats{display:flex;gap:8px;margin-bottom:14px}
+  .stat{flex:1;background:#fff;border-radius:12px;padding:10px;text-align:center;box-shadow:0 1px 5px rgba(15,23,42,.05)}
+  .stat b{display:block;font-size:22px}.stat small{color:var(--muted);font-size:12px}
+  .item{display:flex;align-items:center;gap:10px;background:#fff;border-radius:12px;padding:10px 12px;margin-bottom:8px;box-shadow:0 1px 5px rgba(15,23,42,.05)}
+  .item .i{flex:1}.item .i b{display:block;font-size:14.5px}.item .i small{color:var(--muted);font-size:12px}
+  .star{border:0;background:none;font-size:22px;cursor:pointer;line-height:1;filter:grayscale(1);opacity:.45}
+  .star.on{filter:none;opacity:1}
+  .del{border:1.5px solid var(--line);background:#fff;border-radius:9px;padding:5px 9px;cursor:pointer;color:var(--muted);font-size:13px}
+  .flag{font-size:11px;font-weight:800;border-radius:7px;padding:2px 8px;background:var(--rbg);color:var(--r)}
+  .addbox{background:#fff;border-radius:12px;padding:12px;margin-top:14px;box-shadow:0 1px 5px rgba(15,23,42,.05)}
+  .addbox .row{display:flex;gap:8px}
+  .addbox button{background:var(--navy);color:#fff;border:0;border-radius:10px;padding:0 16px;font:inherit;font-weight:700;cursor:pointer}
+  .legend{font-size:12px;color:var(--muted);margin:10px 2px 0}
+  .note{max-width:900px;margin:20px auto 0;background:#fff;border-radius:14px;padding:14px 18px;font-size:14px;line-height:1.8;border:1px dashed #cbd5e1}
+  /* sectors accordion */
+  .acc{border:1.5px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
+  .acc-top{padding:10px;border-bottom:1px solid var(--line);background:#f8fafc}
+  .acc-top input{padding:9px 11px;font-size:14px}
+  .acc-sum{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;min-height:0}
+  .acc-sum:empty{display:none}
+  .pill{display:inline-flex;align-items:center;gap:4px;background:var(--navy);color:#fff;border-radius:999px;padding:4px 6px 4px 10px;font-size:12.5px;font-weight:600}
+  .pill button{border:0;background:rgba(255,255,255,.18);color:#fff;border-radius:50%;width:18px;height:18px;line-height:18px;padding:0;cursor:pointer;font-size:13px}
+  .pill button:focus-visible{outline:2px solid #fff}
+  .cat{border-bottom:1px solid var(--line)}.cat:last-child{border-bottom:0}
+  .cat-h{width:100%;display:flex;align-items:center;gap:8px;background:#fff;border:0;padding:12px 12px;font:inherit;font-weight:700;font-size:14.5px;color:var(--ink);cursor:pointer;text-align:right}
+  .cat-h:focus-visible,.sub-i input:focus-visible,.selall:focus-visible{outline:3px solid #93c5fd;outline-offset:-3px}
+  .cat-h .nm{flex:1}
+  .cat-h .cn{font-size:11.5px;font-weight:800;background:#e0f2fe;color:var(--navy);border-radius:999px;padding:2px 8px}
+  .cat-h .cn:empty{display:none}
+  .cat-h .ar{transition:transform .2s;color:var(--muted);font-size:12px}
+  .cat.open .cat-h .ar{transform:rotate(-90deg)}
+  .cat-b{display:none;padding:2px 12px 12px;background:#fbfdff}
+  .cat.open .cat-b{display:block}
+  .selall{font:inherit;font-size:12.5px;font-weight:700;color:var(--navy);background:none;border:1.5px dashed #94a3b8;border-radius:9px;padding:5px 10px;cursor:pointer;margin:4px 0 6px}
+  .sub-i{display:flex;align-items:center;gap:8px;padding:7px 2px;font-size:14px;cursor:pointer}
+  .sub-i input{width:18px;height:18px;accent-color:var(--navy);flex:none}
+  .sub-i .tg{margin-right:auto;font-size:10.5px;font-weight:800;border-radius:6px;padding:1px 7px}
+  .tg.live{background:#dcfce7;color:#166534}.tg.soon{background:#f1f5f9;color:#64748b}
+  .sub-i.hide,.cat.hide{display:none}
+  .secbox{background:#fff;border-radius:12px;padding:12px;margin-top:14px;box-shadow:0 1px 5px rgba(15,23,42,.05)}
+  .secbox h4{margin:0 0 2px;font-size:15px}.secbox .hint{font-size:12px;color:var(--muted);margin:0 0 8px}
+  .copyb{font:inherit;font-weight:700;font-size:13px;background:#e0f2fe;color:var(--navy);border:0;border-radius:10px;padding:8px 12px;cursor:pointer;margin-bottom:8px}
+  .savebar{display:flex;gap:8px;align-items:center;margin-top:12px}
+  .savebar button{background:var(--navy);color:#fff;border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer}
+  .savebar span{font-size:13px;color:#166534;font-weight:700;display:none}
+
+  .chip{font:inherit;font-weight:700;font-size:14px;color:var(--ink)}.chip.on{color:#fff}
+
+  body{background:#e9eef5}
+  .wrap{padding:22px 12px 50px}
+  .frame{max-width:520px}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .submit[disabled]{opacity:.6;cursor:wait}
+  .srverr{display:none;background:#fef2f2;color:#991b1b;border-radius:10px;padding:10px 12px;font-size:14px;margin-top:10px;font-weight:600}
+  .done ul{list-style:none;padding:0;margin:10px 0;text-align:right;font-size:14px}
+  .done li{padding:6px 10px;border-radius:8px;background:#f0fdf4;margin-bottom:6px}
+  .done li.miss{background:#fff7ed}
+  .done .box{background:#f8fafc;border-radius:12px;padding:12px;margin-top:12px;font-size:14px;color:var(--mute);text-align:right}
+  .tgbtn{display:inline-block;background:#229ED9;color:#fff;text-decoration:none;font-weight:800;border-radius:12px;padding:12px 18px;margin-top:10px}
+  .foot{max-width:520px;margin:14px auto 0;text-align:center;font-size:11.5px;color:#64748b;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="frame">
+  <div class="fh">
+    <div class="lock"><svg viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#0B1F3A"/><rect x="122" y="292" width="58" height="114" rx="12" fill="#fff"/><rect x="208" y="236" width="58" height="170" rx="12" fill="#fff"/><rect x="294" y="196" width="58" height="210" rx="12" fill="#fff"/><circle cx="326" cy="140" r="27" fill="#E11D2E"/><path d="M343.1 93 A50 50 0 0 1 373 157.1" fill="none" stroke="#E11D2E" stroke-width="14" stroke-linecap="round"/></svg><div class="w">אות</div></div>
+    <div class="slogan">אות. לדעת לפני כולם.<br><span>לפעול לפני כולם.</span></div>
+    <div class="sub">החודש הראשון ללא עלות וללא התחייבות. שתי דקות הרשמה.</div>
+  </div>
+  <form id="f" novalidate>
+    <div class="hp" aria-hidden="true"><label>אתר <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+    <div class="fld" data-req><label for="n">שם מלא <span class="req">*</span></label><input id="n" type="text" name="n" autocomplete="name"><div class="err">נא למלא שם מלא</div></div>
+    <div class="fld" data-req><label for="b">שם העסק <span class="req">*</span></label><input id="b" type="text" name="b" autocomplete="organization"><div class="err">נא למלא את שם העסק</div></div>
+    <div class="fld" data-req data-phone><label for="p">טלפון נייד <span class="req">*</span></label><input id="p" type="tel" name="p" placeholder="05X-XXXXXXX" autocomplete="tel"><div class="err">נא למלא מספר נייד תקין, עשר ספרות שמתחילות ב־05</div></div>
+    <div class="fld" data-req data-mail><label for="e">דואר אלקטרוני <span class="req">*</span></label><input id="e" type="email" name="e" placeholder="name@company.co.il" autocomplete="email"><div class="err">נא למלא כתובת דואר אלקטרוני תקינה</div></div>
+    <div class="fld" id="chf"><label>איך לקבל את ההתראות? <span class="req">*</span></label>
+      <div class="chips" id="ch" role="group" aria-label="ערוצי התראה">
+        <button type="button" class="chip" data-c="w" aria-pressed="false">וואטסאפ</button>
+        <button type="button" class="chip" data-c="t" aria-pressed="false">טלגרם</button>
+        <button type="button" class="chip on" data-c="m" aria-pressed="true">מייל</button>
+      </div>
+      <div class="hint">אפשר לבחור יותר מערוץ אחד.</div><div class="err">נא לבחור לפחות ערוץ אחד</div></div>
+    <div class="fld" id="bizf"><label>באילו תחומים העסק שלך פועל? <span class="req">*</span></label>
+      <div class="hint" style="margin:0 0 6px">בחר תחום אחד או יותר המתארים את פעילות העסק שלך.</div>
+      <div id="accBiz"></div><div class="err">נא לבחור לפחות תחום אחד</div></div>
+    <div class="fld"><label for="a">אזור פעילות עיקרי</label><input id="a" type="text" placeholder="למשל: תל אביב והמרכז"><div class="hint">מכרזי קרקע באזור הזה יסומנו אצלך ויופיעו ראשונים.</div></div>
+    <div class="fld" id="cof"><label>מספרי הח"פ של החברות שאיתן אתם עובדים</label>
+      <div id="cos"></div>
+      <button type="button" class="addco" id="addco">➕ הוספת חברה נוספת</button>
+      <div class="hint">מספר חברה בן תשע ספרות, או שם החברה. אפשר להוסיף גם אחרי ההרשמה.</div></div>
+    <div class="terms" id="tf">
+      <details><summary>תנאי השימוש בקצרה</summary><p>השירות מעביר מידע כפי שפורסם במקורות רשמיים בלבד. אין בו חוות דעת, פרשנות, הערכה או קביעה כלשהי לגבי מצבו של גוף כלשהו. המידע נאסף ממקורות ציבוריים ומעובד אוטומטית, ואינו ייעוץ משפטי, פיננסי או ייעוץ אשראי. אין התחייבות לדיוקו, לשלמותו, לעדכניותו או למועד העברתו. היעדר התראה אינו מעיד על היעדר אירוע. לפני כל החלטה עסקית יש לאמת את המידע מול המקור הרשמי. הפרטים שתמסרו ישמשו רק לצורך מתן השירות. ט.ל.ח.</p></details>
+      <label class="chk"><input type="checkbox" id="tc"> קראתי ואני מסכים לתנאי השימוש</label>
+      <div class="err" id="te">יש לאשר את תנאי השימוש כדי להירשם</div>
+      <label class="chk" id="waok" style="display:none"><input type="checkbox" id="wc" checked> אני מאשר לקבל התראות בוואטסאפ למספר שמסרתי</label>
+      <label class="chk"><input type="checkbox" id="mc"> אשמח לקבל עדכונים על השירות</label>
+    </div>
+    <button type="submit" class="submit" id="sb">הרשמה · חודש ראשון ללא עלות</button>
+    <div class="srverr" id="se"></div>
+  </form>
+  <div class="done" id="done"></div>
+</div>
+<div class="foot">השירות מעביר מידע כפי שפורסם במקורות רשמיים בלבד. אין בו חוות דעת, פרשנות, הערכה או קביעה כלשהי לגבי מצבו של גוף כלשהו. ט.ל.ח.</div>
+</div>
+<script>
+var API='https://biz-alerts.app.n8n.cloud/webhook/ot-api';
+const TAX=[
+ {id:'c01',o:1,n:'חומרי בניין ומוצרי גמר',s:[['m_general','חומרי בניין כלליים'],['m_concrete','בטון, מלט ובלוקים'],['m_steel','ברזל ופלדה'],['m_gypsum','גבס, טיח וצבע'],['m_ceramic','קרמיקה, ריצוף ושיש'],['m_wood','עץ, נגרות ודלתות'],['m_insul','איטום ובידוד',[134]]]},
+ {id:'c02',o:2,n:'חשמל, תאורה ואנרגיה',s:[['e_supply','ציוד ואביזרי חשמל'],['e_contr','קבלני חשמל',[160]],['e_light','תאורה'],['e_panels','לוחות חשמל וכבלים'],['e_solar','אנרגיה סולארית ואגירה',[191]],['e_gen','גנרטורים ומערכות גיבוי']]},
+ {id:'c03',o:3,n:'אינסטלציה, מיזוג ומערכות מים',s:[['p_pipes','אינסטלציה וצנרת',[190]],['p_sanit','כלים סניטריים'],['p_pumps','משאבות ומערכות מים',[500]],['p_hvac','מיזוג אוויר ואוורור',[170]],['p_heat','דודים ומערכות חימום',[171]],['p_sewer','ביוב וניקוז',[260]]]},
+ {id:'c04',o:4,n:'אלומיניום, זכוכית ומסגרות',s:[['a_alu','אלומיניום ופרופילים'],['a_win','חלונות ותריסים'],['a_glass','זכוכית וקירות מסך'],['a_metal','מסגרות ומוצרי מתכת',[150]],['a_gates','שערים, גדרות ומעקות'],['a_perg','פרגולות והצללה']]},
+ {id:'c05',o:5,n:'קבלנות, שלד וביצוע',s:[['k_main','קבלנים ראשיים',[100]],['k_frame','קבלני שלד ובטון',[130,133]],['k_finish','קבלני גמר ושיפוצים',[131,132,135]],['k_sub','קבלני משנה'],['k_found','ביסוס, קידוחים וכלונסאות',[120]],['k_prefab','בנייה מתועשת וקלה',[140]],['k_demol','הריסה ושיקום מבנים']]},
+ {id:'c06',o:6,n:'תשתיות, עפר ופיתוח',s:[['i_earth','עבודות עפר וחציבה',[210]],['i_roads','כבישים ואספלט',[200,220,230]],['i_water','תשתיות מים וביוב',[260]],['i_elec','תשתיות חשמל ותקשורת',[270,240,280]],['i_bridge','גשרים ומנהרות',[300,310,320]],['i_garden','גינון ופיתוח סביבתי',[111,193]]]},
+ {id:'c07',o:7,n:'ציוד בנייה, מכונות וכלי עבודה',s:[['q_heavy','ציוד מכני הנדסי'],['q_crane','מנופים ועגורנים'],['q_scaff','במות הרמה ופיגומים'],['q_tools','כלי עבודה'],['q_rent','השכרת ציוד בנייה'],['q_safety','ציוד בטיחות']]},
+ {id:'c08',o:8,n:'מערכות מבנה, בטיחות ומיגון',s:[['s_elev','מעליות ודרגנועים',[180]],['s_fire','מערכות כיבוי וגילוי אש',[190]],['s_cctv','מצלמות ואבטחה'],['s_lowv','תקשורת ומתח נמוך',[160]],['s_smart','בניינים חכמים ובקרה'],['s_mamad','ממ"דים ומיגון']]},
+ {id:'c09',o:9,n:'יזמות, נדל"ן ותכנון',s:[['d_dev','יזמי נדל"ן'],['d_renew','התחדשות עירונית'],['d_arch','אדריכלות והנדסה'],['d_pm','ניהול ופיקוח פרויקטים'],['d_cons','ייעוץ ותכנון'],['d_lab','מעבדות ובדיקות בנייה']]},
+ {id:'c10',o:10,n:'מסחר, אספקה ולוגיסטיקה',s:[['t_import','יבואני מוצרי בנייה'],['t_whole','סיטונאים ומפיצים'],['t_retail','חנויות ורשתות אספקה'],['t_trans','הובלה ושינוע'],['t_wh','מחסנים ומרכזים לוגיסטיים'],['t_waste','פינוי ומחזור פסולת בניין']]},
+ {id:'c11',o:11,n:'מימון, ביטוח וכוח אדם',s:[['f_bank','בנקים וליווי פרויקטים'],['f_nonbank','מימון חוץ בנקאי'],['f_ins','ביטוח וערבויות'],['f_hr','כוח אדם ותאגידי עובדים']]}
+];
+// old single-select value -> new ids (non-destructive: the old field stays)
+const LEGACY={'ספק חומרי בניין':['m_general'],'קבלן משנה':['k_sub'],'השכרת ציוד, ציוד כבד ופיגומים':['q_rent','q_heavy','q_scaff'],'גוף מימון':['f_bank','f_nonbank'],'קבלן ראשי':['k_main'],'אחר':[]};
+const SUBN={};TAX.forEach(c=>c.s.forEach(x=>SUBN[x[0]]=x[1]));
+
+function makeAcc(el,opt){
+ const sel=new Set(opt.init||[]);
+ el.innerHTML='<div class="acc"><div class="acc-top"><input type="text" placeholder="חיפוש תחום, למשל: אלומיניום" aria-label="חיפוש תחום"><div class="acc-sum" aria-live="polite"></div></div><div class="cats"></div></div>';
+ const cats=el.querySelector('.cats'),sum=el.querySelector('.acc-sum'),q=el.querySelector('input');
+ TAX.forEach(c=>{const d=document.createElement('div');d.className='cat';const bid=el.id+'_'+c.id;
+  d.innerHTML='<button type="button" class="cat-h" aria-expanded="false" aria-controls="'+bid+'"><span class="nm">'+c.n+'</span><span class="cn"></span><span class="ar">◀</span></button><div class="cat-b" id="'+bid+'" role="group" aria-label="'+c.n+'"><button type="button" class="selall">בחר את כל התחומים</button>'+
+  c.s.map(x=>'<label class="sub-i"><input type="checkbox" value="'+x[0]+'"><span>'+x[1]+'</span>'+(opt.track?(x[2]?'<span class="tg live">פעיל</span>':'<span class="tg soon">נשמר</span>'):'')+'</label>').join('')+'</div>';
+  const h=d.querySelector('.cat-h');h.onclick=()=>{const o=d.classList.toggle('open');h.setAttribute('aria-expanded',o);};
+  d.querySelectorAll('.sub-i input').forEach(i=>i.onchange=()=>{i.checked?sel.add(i.value):sel.delete(i.value);draw();});
+  d.querySelector('.selall').onclick=()=>{const ids=c.s.map(x=>x[0]);const all=ids.every(i=>sel.has(i));ids.forEach(i=>all?sel.delete(i):sel.add(i));draw();};
+  d._c=c;cats.appendChild(d);});
+ function draw(){cats.querySelectorAll('.cat').forEach(d=>{const ids=d._c.s.map(x=>x[0]);const n=ids.filter(i=>sel.has(i)).length;d.querySelector('.cn').textContent=n?n+' נבחרו':'';d.querySelector('.selall').textContent=n===ids.length?'ביטול כל התחומים':'בחר את כל התחומים';d.querySelectorAll('.sub-i input').forEach(i=>i.checked=sel.has(i.value));});
+  sum.innerHTML='';[...sel].forEach(id=>{const p=document.createElement('span');p.className='pill';p.innerHTML=SUBN[id]+' <button type="button" aria-label="הסרת '+SUBN[id]+'">×</button>';p.querySelector('button').onclick=()=>{sel.delete(id);draw();};sum.appendChild(p);});
+  opt.onchange&&opt.onchange(sel);}
+ q.oninput=()=>{const t=q.value.trim();cats.querySelectorAll('.cat').forEach(d=>{let any=false;const catHit=t&&d._c.n.includes(t);d.querySelectorAll('.sub-i').forEach(l=>{const hit=!t||catHit||l.textContent.includes(t);l.classList.toggle('hide',!hit);any=any||hit;});d.classList.toggle('hide',!!t&&!any);if(t&&any){d.classList.add('open');d.querySelector('.cat-h').setAttribute('aria-expanded',true);}});};
+ draw();
+ return {get:()=>[...sel],set:a=>{sel.clear();a.forEach(x=>sel.add(x));draw();}};
+}
+
+var accBiz=makeAcc(document.getElementById('accBiz'),{});
+var cos=document.getElementById('cos');
+function addRow(){var d=document.createElement('div');d.className='co-row';d.innerHTML='<input type="text" placeholder="למשל: 515447423" aria-label="מספר חברה או שם"><button type="button" title="הסרה" aria-label="הסרה">×</button>';d.querySelector('button').onclick=function(){d.remove();};cos.appendChild(d);}
+addRow();addRow();
+document.getElementById('addco').onclick=addRow;
+function syncWa(){var on=!!document.querySelector('#ch .chip[data-c=w].on');document.getElementById('waok').style.display=on?'flex':'none';}
+document.querySelectorAll('#ch .chip').forEach(function(c){c.onclick=function(){c.classList.toggle('on');c.setAttribute('aria-pressed',c.classList.contains('on'));syncWa();};});
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+document.getElementById('f').onsubmit=function(e){e.preventDefault();var ok=true;
+ document.querySelectorAll('[data-req]').forEach(function(f){var i=f.querySelector('input');var v=i.value.trim();var bad=!v;
+  if(f.hasAttribute('data-phone'))bad=!/^05\d{8}$/.test(v.replace(/\D/g,''));
+  if(f.hasAttribute('data-mail'))bad=!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
+  f.classList.toggle('bad',bad);if(bad)ok=false;});
+ var bz=accBiz.get();document.getElementById('bizf').classList.toggle('bad',!bz.length);if(!bz.length)ok=false;
+ var chs=[].map.call(document.querySelectorAll('#ch .chip.on'),function(c){return c.dataset.c;});document.getElementById('chf').classList.toggle('bad',!chs.length);if(!chs.length)ok=false;
+ var tOk=document.getElementById('tc').checked;document.getElementById('te').style.display=tOk?'none':'block';if(!tOk)ok=false;
+ if(!ok){var b=document.querySelector('.bad,#te[style*=block]');if(b)b.scrollIntoView({behavior:'smooth',block:'center'});return;}
+ var body={action:'signup',website:document.querySelector('[name=website]').value,
+  full_name:document.getElementById('n').value.trim(),business:document.getElementById('b').value.trim(),
+  phone:document.getElementById('p').value.replace(/\D/g,''),email:document.getElementById('e').value.trim(),
+  channels:chs,wa_optin:chs.indexOf('w')>-1&&document.getElementById('wc').checked,business_sectors:bz,
+  area:document.getElementById('a').value.trim(),
+  companies:[].map.call(cos.querySelectorAll('input'),function(i){return i.value.trim();}).filter(Boolean),
+  consent_terms:true,consent_marketing:document.getElementById('mc').checked};
+ var sb=document.getElementById('sb'),se=document.getElementById('se');sb.disabled=true;sb.textContent='שולחים…';se.style.display='none';
+ fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)}).then(function(r){return r.json();}).then(function(j){
+  if(!j||!j.ok){throw new Error(j&&j.error||'');}
+  var h='<div class="lock" style="justify-content:center"><svg viewBox="0 0 512 512" style="width:44px;height:44px"><rect width="512" height="512" rx="112" fill="#0B1F3A"/><rect x="122" y="292" width="58" height="114" rx="12" fill="#fff"/><rect x="208" y="236" width="58" height="170" rx="12" fill="#fff"/><rect x="294" y="196" width="58" height="210" rx="12" fill="#fff"/><circle cx="326" cy="140" r="27" fill="#E11D2E"/></svg></div>';
+  if(j.existing){h+='<h3>כבר נרשמת לאות</h3><p class="sub">שלחנו לכתובת '+esc(body.email)+' קישור לעמוד הרשימה שלך. שם אפשר להוסיף חברות ולעדכן תחומים.</p>';}
+  else{h+='<h3>נרשמת. ברוכים הבאים לאות.</h3>';
+   if(j.matched&&j.matched.length)h+='<p class="sub">'+(j.matched.length===1?'זיהינו ברשם החברות חברה אחת מהרשימה שלך:':'זיהינו ברשם החברות '+j.matched.length+' חברות מהרשימה שלך:')+'</p><ul>'+j.matched.map(function(m){return '<li>✓ '+esc(m)+'</li>';}).join('')+(j.missing||[]).map(function(m){return '<li class="miss">לא זוהתה: '+esc(m)+'. אפשר לתקן בעמוד הרשימה.</li>';}).join('')+'</ul>';
+   else if(j.missing&&j.missing.length)h+='<ul>'+j.missing.map(function(m){return '<li class="miss">לא זוהתה: '+esc(m)+'. אפשר לתקן בעמוד הרשימה.</li>';}).join('')+'</ul>';
+   h+='<p class="sub">העדכון היומי הראשון יגיע מחר בשמונה בבוקר. התראה דחופה על חברה מהרשימה שלך תגיע מיד.</p>';
+   if(j.bot_link)h+='<div class="box"><b>נשאר צעד אחד לטלגרם:</b> לחיצה על הכפתור, ואז על "הפעל" בבוט.<br><a class="tgbtn" href="'+esc(j.bot_link)+'" target="_blank" rel="noopener">פתיחת הבוט בטלגרם</a></div>';
+   if(j.wa_pending)h+='<div class="box">ההתראות בוואטסאפ יופעלו בימים הקרובים. עד אז הן יגיעו אליך במייל, ותקבל הודעה כשהוואטסאפ יתחבר.</div>';
+   if(j.link)h+='<a class="ebtn" style="margin-top:14px" href="'+esc(j.link)+'">⚙️ לעמוד הרשימה שלי</a><div class="hint">שלחנו את הקישור גם למייל שלך.</div>';}
+  document.getElementById('f').style.display='none';var d=document.getElementById('done');d.innerHTML=h;d.style.display='block';window.scrollTo({top:0,behavior:'smooth'});
+ }).catch(function(err){se.textContent=err.message||'משהו השתבש בשליחה. נסו שוב בעוד רגע.';se.style.display='block';sb.disabled=false;sb.textContent='הרשמה · חודש ראשון ללא עלות';});
+};
+</script>
+</body>
+</html>

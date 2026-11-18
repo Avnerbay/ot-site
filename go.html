@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>אות</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  :root{--navy:#0b1830;--navy-2:#132544;--teal:#2dd4bf;--text:#e8edf5;--muted:#9aa8c0;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,"Segoe UI",Arial,sans-serif;background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+  .card{width:100%;max-width:380px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 20px 24px;}
+  .brand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .brand img{width:32px;height:32px;border-radius:8px;}
+  .brand .name{font-size:14px;font-weight:600;}
+  .brand .tag{font-size:11px;color:var(--muted);}
+  hr{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:14px 0;}
+  .label{font-size:12px;color:var(--muted);margin:0 0 4px;}
+  .title{font-size:17px;font-weight:600;margin:0;}
+  .sub{font-size:13px;color:var(--muted);margin:6px 0 0;}
+  .note{display:flex;gap:8px;align-items:flex-start;background:rgba(255,255,255,0.04);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--muted);margin:14px 0;line-height:1.6;}
+  .note svg{flex-shrink:0;margin-top:2px;}
+  .btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;background:var(--teal);color:#042c25;border:none;border-radius:10px;padding:13px;font-size:14px;font-weight:600;cursor:pointer;}
+  .footer{font-size:10px;color:var(--muted);text-align:center;margin-top:12px;}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">
+      <img src="/logo-icon.png" alt="אות">
+      <div>
+        <div class="name">אות</div>
+        <div class="tag">לדעת לפני כולם</div>
+      </div>
+    </div>
+    <hr>
+    <p class="label" id="kicker">עדכון</p>
+    <p class="title" id="title">—</p>
+    <p class="sub" id="subtitle"></p>
+    <div class="note">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+      <span>המידע מוצג כפי שפורסם במקור הרשמי, ללא פרשנות</span>
+    </div>
+    <button class="btn" id="cta">לצפייה במקור הרשמי</button>
+    <p class="footer">ט.ל.ח · ot-alerts.co.il</p>
+  </div>
+
+<script>
+  var params = new URLSearchParams(window.location.search);
+  var target = params.get('target') || '';
+  document.getElementById('kicker').textContent = params.get('kicker') || 'עדכון';
+  document.getElementById('title').textContent = params.get('title') || '';
+  document.getElementById('subtitle').textContent = params.get('subtitle') || '';
+  document.getElementById('cta').textContent = params.get('cta') || 'לצפייה במקור הרשמי';
+  document.getElementById('cta').addEventListener('click', function(){
+    if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.openLink) {
+      window.Telegram.WebApp.openLink(target);
+    } else {
+      window.open(target, '_blank');
+    }
+  });
+  if (window.Telegram && window.Telegram.WebApp) { window.Telegram.WebApp.ready(); window.Telegram.WebApp.expand(); }
+</script>
+</body>
+</html>
