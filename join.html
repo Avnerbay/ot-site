@@ -257,7 +257,7 @@ document.getElementById('f').onsubmit=function(e){e.preventDefault();var ok=true
    else if(j.missing&&j.missing.length)h+='<ul>'+j.missing.map(function(m){return '<li class="miss">לא זוהתה: '+esc(m)+'. אפשר לתקן בעמוד הרשימה.</li>';}).join('')+'</ul>';
    h+='<p class="sub">העדכון היומי הראשון יגיע מחר בשמונה בבוקר. התראה דחופה על חברה מהרשימה שלך תגיע מיד.</p>';
    if(j.bot_link)h+='<div class="box"><b>נשאר צעד אחד לטלגרם:</b> לחיצה על הכפתור, ואז על "הפעל" בבוט.<br><a class="tgbtn" href="'+esc(j.bot_link)+'" target="_blank" rel="noopener">פתיחת הבוט בטלגרם</a></div>';
-   if(j.wa_pending)h+='<div class="box">ההתראות בוואטסאפ יופעלו בימים הקרובים. עד אז הן יגיעו אליך במייל, ותקבל הודעה כשהוואטסאפ יתחבר.</div>';
+   if(j.wa_pending)h+='<div class="box">וואטסאפ זמין באות. אפשר לבדוק את הגדרת ערוץ ההתראות בעמוד הרשימה שלך.</div>';
    if(j.link)h+='<a class="ebtn" style="margin-top:14px" href="'+esc(j.link)+'">⚙️ לעמוד הרשימה שלי</a><div class="hint">שלחנו את הקישור גם למייל שלך.</div>';}
   document.getElementById('f').style.display='none';var d=document.getElementById('done');d.innerHTML=h;d.style.display='block';window.scrollTo({top:0,behavior:'smooth'});
  }).catch(function(err){se.textContent=err.message||'משהו השתבש בשליחה. נסו שוב בעוד רגע.';se.style.display='block';sb.disabled=false;sb.textContent='הרשמה · חודש ראשון ללא עלות';});
