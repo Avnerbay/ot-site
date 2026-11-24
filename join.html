@@ -161,7 +161,11 @@
   .chip,.cat-h,.co-row button,.addco{min-height:44px}
   .chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
   .chip{min-width:0}
-  .chip[data-c=w].on{background:#166534;border-color:#166534}
+  .chip[data-c=w]{--channel:#166534;--channel-bg:#f0fdf4}
+  .chip[data-c=t]{--channel:#0369a1;--channel-bg:#f0f9ff}
+  .chip[data-c=m]{--channel:#6b21a8;--channel-bg:#faf5ff}
+  .chip[data-c]{background:var(--channel-bg);border-color:var(--channel);color:var(--channel)}
+  .chip[data-c].on{background:var(--channel);border-color:var(--channel);color:#fff}
   #waok{padding:10px 12px;border-radius:10px;background:#eefbf1;color:#14532d}
   .chk input{flex:none}
   .cat-h .nm{margin:0}
