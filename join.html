@@ -140,6 +140,35 @@
   .done .box{background:#f8fafc;border-radius:12px;padding:12px;margin-top:12px;font-size:14px;color:var(--mute);text-align:right}
   .tgbtn{display:inline-block;background:#229ED9;color:#fff;text-decoration:none;font-weight:800;border-radius:12px;padding:12px 18px;margin-top:10px}
   .foot{max-width:520px;margin:14px auto 0;text-align:center;font-size:11.5px;color:#64748b;line-height:1.6}
+  /* Registration layout */
+  body{background:#f1f5f9}
+  .wrap{padding:clamp(16px,5vw,48px) 12px}
+  .frame{max-width:740px;border:1px solid #dce5ef;box-shadow:0 18px 50px rgba(11,31,58,.09)}
+  .fh{padding:clamp(24px,5vw,40px);text-align:start;background:linear-gradient(125deg,var(--navy),#173960);border-bottom:4px solid var(--red)}
+  .fh .lock{justify-content:flex-start}
+  .fh .lock .w,.fh .slogan{color:#fff}
+  .fh .slogan{font-size:clamp(26px,5vw,36px);margin:14px 0 6px}
+  .fh .sub{color:#e0eafa;margin:0}
+  form{display:grid;gap:16px;padding:clamp(12px,4vw,28px)}
+  .form-section{min-width:0;border:1px solid var(--line);border-radius:16px;padding:clamp(14px,3vw,22px)}
+  .form-section h2{margin:0 0 14px;color:var(--navy);font-size:19px}
+  .contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .contact-grid .fld,.form-section .fld:last-child{margin-bottom:0}
+  .form-section input[type=text],.form-section input[type=email],.form-section input[type=tel]{min-height:46px;font-size:16px}
+  #e,#p{direction:ltr;text-align:right}
+  .chip,.cat-h,.co-row button,.addco{min-height:44px}
+  .chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .chip{min-width:0}
+  .chip[data-c=w].on{background:#166534;border-color:#166534}
+  #waok{padding:10px 12px;border-radius:10px;background:#eefbf1;color:#14532d}
+  .chk input{flex:none}
+  .cat-h .nm{margin:0}
+  .co-row input{min-width:0}
+  .co-row button{flex:none}
+  .submit{margin:0;min-height:52px}
+  form button:focus-visible,form summary:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+  .foot{max-width:700px;padding-inline:8px}
+  @media(max-width:480px){.contact-grid{grid-template-columns:1fr}.form-section h2{font-size:18px}}
 </style>
 </head>
 <body>
@@ -147,22 +176,33 @@
 <div class="frame">
   <div class="fh">
     <div class="lock"><svg viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#0B1F3A"/><rect x="122" y="292" width="58" height="114" rx="12" fill="#fff"/><rect x="208" y="236" width="58" height="170" rx="12" fill="#fff"/><rect x="294" y="196" width="58" height="210" rx="12" fill="#fff"/><circle cx="326" cy="140" r="27" fill="#E11D2E"/><path d="M343.1 93 A50 50 0 0 1 373 157.1" fill="none" stroke="#E11D2E" stroke-width="14" stroke-linecap="round"/></svg><div class="w">אות</div></div>
-    <div class="slogan">אות. לדעת לפני כולם.<br><span>לפעול לפני כולם.</span></div>
+    <h1 class="slogan">הרשמה לאות</h1>
     <div class="sub">החודש הראשון ללא עלות וללא התחייבות. שתי דקות הרשמה.</div>
   </div>
   <form id="f" novalidate>
     <div class="hp" aria-hidden="true"><label>אתר <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+    <section class="form-section" aria-labelledby="contact-title">
+    <h2 id="contact-title">פרטי העסק והקשר</h2>
+    <div class="contact-grid">
     <div class="fld" data-req><label for="n">שם מלא <span class="req">*</span></label><input id="n" type="text" name="n" autocomplete="name"><div class="err">נא למלא שם מלא</div></div>
     <div class="fld" data-req><label for="b">שם העסק <span class="req">*</span></label><input id="b" type="text" name="b" autocomplete="organization"><div class="err">נא למלא את שם העסק</div></div>
     <div class="fld" data-req data-phone><label for="p">טלפון נייד <span class="req">*</span></label><input id="p" type="tel" name="p" placeholder="05X-XXXXXXX" autocomplete="tel"><div class="err">נא למלא מספר נייד תקין, עשר ספרות שמתחילות ב־05</div></div>
     <div class="fld" data-req data-mail><label for="e">דואר אלקטרוני <span class="req">*</span></label><input id="e" type="email" name="e" placeholder="name@company.co.il" autocomplete="email"><div class="err">נא למלא כתובת דואר אלקטרוני תקינה</div></div>
-    <div class="fld" id="chf"><label>איך לקבל את ההתראות? <span class="req">*</span></label>
+    </div>
+    </section>
+    <section class="form-section" aria-labelledby="channel-title">
+    <h2 id="channel-title">איך לקבל את ההתראות?</h2>
+    <div class="fld" id="chf">
       <div class="chips" id="ch" role="group" aria-label="ערוצי התראה">
         <button type="button" class="chip" data-c="w" aria-pressed="false">וואטסאפ</button>
         <button type="button" class="chip" data-c="t" aria-pressed="false">טלגרם</button>
         <button type="button" class="chip on" data-c="m" aria-pressed="true">מייל</button>
       </div>
       <div class="hint">אפשר לבחור יותר מערוץ אחד.</div><div class="err">נא לבחור לפחות ערוץ אחד</div></div>
+      <label class="chk" id="waok" style="display:none"><input type="checkbox" id="wc"> אני מאשר לקבל התראות בוואטסאפ למספר שמסרתי</label>
+    </section>
+    <section class="form-section" aria-labelledby="activity-title">
+    <h2 id="activity-title">תחומי פעילות ומעקב</h2>
     <div class="fld" id="bizf"><label>באילו תחומים העסק שלך פועל? <span class="req">*</span></label>
       <div class="hint" style="margin:0 0 6px">בחר תחום אחד או יותר המתארים את פעילות העסק שלך.</div>
       <div id="accBiz"></div><div class="err">נא לבחור לפחות תחום אחד</div></div>
@@ -171,13 +211,16 @@
       <div id="cos"></div>
       <button type="button" class="addco" id="addco">➕ הוספת חברה נוספת</button>
       <div class="hint">מספר חברה בן תשע ספרות, או שם החברה. אפשר להוסיף גם אחרי ההרשמה.</div></div>
+    </section>
+    <section class="form-section" aria-labelledby="terms-title">
+    <h2 id="terms-title">אישורים</h2>
     <div class="terms" id="tf">
       <details><summary>תנאי השימוש בקצרה</summary><p>השירות מעביר מידע כפי שפורסם במקורות רשמיים בלבד. אין בו חוות דעת, פרשנות, הערכה או קביעה כלשהי לגבי מצבו של גוף כלשהו. המידע נאסף ממקורות ציבוריים ומעובד אוטומטית, ואינו ייעוץ משפטי, פיננסי או ייעוץ אשראי. אין התחייבות לדיוקו, לשלמותו, לעדכניותו או למועד העברתו. היעדר התראה אינו מעיד על היעדר אירוע. לפני כל החלטה עסקית יש לאמת את המידע מול המקור הרשמי. הפרטים שתמסרו ישמשו רק לצורך מתן השירות. ט.ל.ח.</p></details>
       <label class="chk"><input type="checkbox" id="tc"> קראתי ואני מסכים לתנאי השימוש</label>
       <div class="err" id="te">יש לאשר את תנאי השימוש כדי להירשם</div>
-      <label class="chk" id="waok" style="display:none"><input type="checkbox" id="wc"> אני מאשר לקבל התראות בוואטסאפ למספר שמסרתי</label>
       <label class="chk"><input type="checkbox" id="mc"> אשמח לקבל עדכונים על השירות</label>
     </div>
+    </section>
     <button type="submit" class="submit" id="sb">הרשמה · חודש ראשון ללא עלות</button>
     <div class="srverr" id="se"></div>
   </form>
