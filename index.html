@@ -19,6 +19,46 @@ button:focus-visible,a:focus-visible{outline:3px solid #2563EB;outline-offset:2p
 <style>
 .home-shell{max-width:1120px;padding-inline:24px;margin:auto}.home-hero{background:radial-gradient(ellipse at top left,#274977,transparent 65%),#0b1f3a;color:white;padding-block:76px}.hero-layout{display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:58px}.home-hero h1{font-size:clamp(36px,5vw,64px);line-height:1.08;margin:8px 0 20px}.home-hero h1 span{color:#ff969f}.home-hero p{color:#e2eeff;max-width:52ch}.hero-lead{font-size:20px}.home-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.home-actions a{border:1px solid #94a9c4;border-radius:9px;padding:11px 16px;color:#fff;text-decoration:none;font-weight:800}.home-actions a:first-child{background:#fff;color:#0b1f3a}.demo-panel{border-radius:16px;overflow:hidden;background:white;color:#0b1f3a;box-shadow:0 25px 55px #05102480}.demo-panel header,.demo-panel div{padding:15px 20px;border-bottom:1px solid #e1eaf4}.demo-panel header{background:#eaf2fb;font-weight:800}.demo-panel small{display:block;color:#415979}.home-services{background:#f3f6fa;padding-block:62px}.home-services h2{font-size:clamp(30px,4vw,42px);margin:0}.home-service-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0;margin:26px 0 0;list-style:none;counter-reset:service}.home-service-list li{--accent:#b42337;--tint:#fff2f4;counter-increment:service;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--tint),#fff 58%);border:1px solid color-mix(in srgb,var(--accent) 28%,#fff);border-top:5px solid var(--accent);border-radius:14px;padding:20px;min-width:0;box-shadow:0 7px 18px rgba(15,31,58,.05);transition:transform .2s ease,box-shadow .2s ease}.home-service-list li:hover{transform:translateY(-3px);box-shadow:0 13px 25px rgba(15,31,58,.12)}.home-service-list li::after{content:"";position:absolute;width:92px;height:92px;border-radius:50%;background:var(--accent);opacity:.09;left:-30px;bottom:-35px}.home-service-list li:nth-child(2){--accent:#6d28d9;--tint:#f6f1ff}.home-service-list li:nth-child(3){--accent:#c75b12;--tint:#fff6e9}.home-service-list li:nth-child(4){--accent:#087b76;--tint:#ecfbf8}.home-service-list li:nth-child(5){--accent:#1769d1;--tint:#edf5ff}.home-service-list li:nth-child(6){--accent:#a21caf;--tint:#fff0fd}.home-service-list li:nth-child(7){--accent:#16803f;--tint:#effbf3}.home-service-list li:nth-child(8){--accent:#0b5c86;--tint:#ecf8ff}.home-service-list li:nth-child(9){--accent:#9a6700;--tint:#fff9e8}.home-service-list h3{position:relative;z-index:1;margin:0;font-size:19px;color:#0b1f3a}.home-service-list h3::before{content:counter(service) ". ";color:var(--accent)}.home-service-list p{position:relative;z-index:1;margin:8px 0;color:#334a64}.home-service-list small{position:relative;z-index:1;display:inline-flex;align-items:center;gap:5px;width:fit-content;margin-top:12px;padding:4px 9px;border-radius:999px;background:color-mix(in srgb,var(--accent) 11%,#fff);color:color-mix(in srgb,var(--accent) 84%,#0b1f3a);font-weight:800;font-size:13px}.home-service-list small::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}.home-service-list a{position:relative;z-index:1;display:inline-block;margin-top:10px;color:var(--accent);font-weight:800}@media(max-width:820px){.home-hero{padding-block:48px}.hero-layout{grid-template-columns:1fr;gap:30px}.home-service-list{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){.home-shell{padding-inline:16px}.home-service-list{grid-template-columns:1fr}.home-services{padding-block:42px}}
 </style>
+<style>
+/* Mobile-first refinements */
+@media (max-width:640px){
+  html,body{max-width:100%;overflow-x:hidden}
+  header>div{height:64px!important;padding-inline:16px!important}
+  header>div>div:first-child{gap:8px!important}
+  header>div>div:first-child>span:nth-of-type(1){font-size:24px!important}
+  header>div>div:first-child>span:last-child{font-size:11px!important}
+  header>div>a{min-height:44px!important;padding-inline:13px!important;font-size:14px!important}
+  .home-shell{padding-inline:16px}
+  .home-hero{padding-block:34px}
+  .home-hero h1{font-size:34px;line-height:1.14;margin-block:6px 14px}
+  .hero-lead{font-size:17px;line-height:1.65}
+  .home-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:20px}
+  .home-actions a{display:flex;align-items:center;justify-content:center;min-height:50px;box-sizing:border-box;font-size:16px}
+  .demo-panel{border-radius:14px}
+  .demo-panel header,.demo-panel div{padding:13px 14px;font-size:15px}
+  .home-services{padding-block:38px}
+  .home-services h2,section h2{font-size:29px!important;line-height:1.25!important}
+  .home-service-list{grid-template-columns:1fr;gap:12px;margin-top:20px}
+  .home-service-list li{padding:17px 16px 18px;border-radius:13px}
+  .home-service-list h3{font-size:20px;line-height:1.3}
+  .home-service-list p{font-size:16px;line-height:1.65;margin-block:9px}
+  .home-service-list small{font-size:13px;line-height:1.35}
+  .home-service-list a{min-height:44px;display:flex;align-items:center;font-size:15px}
+  section[style]{padding-block:42px!important}
+  section[style]>div{padding-inline:16px!important}
+  div[style*="minmax(380px, 1fr)"],div[style*="minmax(300px, 1fr)"]{grid-template-columns:1fr!important}
+  div[style*="flex: 1 1 380px"],div[style*="flex: 1 1 340px"]{flex-basis:100%!important}
+  div[style*="padding: 28px"]{padding:18px!important;border-radius:16px!important}
+  #cmp{min-width:0!important;width:100%!important;box-sizing:border-box}
+  label[for="cmp"]+div{flex-wrap:wrap}
+  label[for="cmp"]+div button{width:100%;min-height:50px!important}
+  .acc button{min-height:70px!important;padding:14px!important;gap:12px!important}
+  .acc button span[style*="width: 48px"]{width:42px!important;height:42px!important;border-radius:10px!important}
+  .acc button span[style*="font-size: 18px"]{font-size:17px!important}
+  .acc button span[style*="font-size: 14px"]{font-size:14px!important;line-height:1.4}
+  footer{padding:22px 16px!important;font-size:13px!important}
+}
+</style>
 </head>
 <body>
 
