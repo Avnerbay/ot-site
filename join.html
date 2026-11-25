@@ -176,10 +176,12 @@
   .foot{max-width:700px;padding-inline:8px}
   @media(max-width:480px){.contact-grid{grid-template-columns:1fr}.form-section h2{font-size:18px}}
 </style>
+<link rel="stylesheet" href="/policies.css">
 </head>
 <body>
+<a class="policy-skip" href="#main-content">דילוג לתוכן המרכזי</a>
 <div class="wrap">
-<div class="frame">
+<main class="frame" id="main-content" tabindex="-1">
   <div class="fh">
     <div class="lock"><svg viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#0B1F3A"/><rect x="122" y="292" width="58" height="114" rx="12" fill="#fff"/><rect x="208" y="236" width="58" height="170" rx="12" fill="#fff"/><rect x="294" y="196" width="58" height="210" rx="12" fill="#fff"/><circle cx="326" cy="140" r="27" fill="#E11D2E"/><path d="M343.1 93 A50 50 0 0 1 373 157.1" fill="none" stroke="#E11D2E" stroke-width="14" stroke-linecap="round"/></svg><div class="w">אות</div></div>
     <h1 class="slogan">מודיעין עסקי לענף הבנייה</h1>
@@ -188,11 +190,12 @@
     <div class="hp" aria-hidden="true"><label>אתר <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
     <section class="form-section" aria-labelledby="contact-title">
     <h2 id="contact-title">פרטי העסק והקשר</h2>
+    <p id="privacy-notice" class="privacy-notice">מסירת הפרטים היא לבחירתך. בלי שדות החובה אי אפשר להשלים את ההרשמה. הפרטים ישמשו את מרחב, מפעילת אות, לניהול המנוי ומסירת התראות. מידע הדרוש לכך מועבר לספקי התשתית ולערוצי המסירה שבחרת. פירוט על ספקים, שמירה וזכויות עיון ותיקון מופיע ב<a href="/privacy.html">מדיניות הפרטיות</a>.</p>
     <div class="contact-grid">
-    <div class="fld" data-req><label for="n">שם מלא <span class="req">*</span></label><input id="n" type="text" name="n" autocomplete="name"><div class="err">נא למלא שם מלא</div></div>
-    <div class="fld" data-req><label for="b">שם העסק <span class="req">*</span></label><input id="b" type="text" name="b" autocomplete="organization"><div class="err">נא למלא את שם העסק</div></div>
-    <div class="fld" data-req data-phone><label for="p">טלפון נייד <span class="req">*</span></label><input id="p" type="tel" name="p" placeholder="05X-XXXXXXX" autocomplete="tel"><div class="err">נא למלא מספר נייד תקין, עשר ספרות שמתחילות ב־05</div></div>
-    <div class="fld" data-req data-mail><label for="e">דואר אלקטרוני <span class="req">*</span></label><input id="e" type="email" name="e" placeholder="name@company.co.il" autocomplete="email"><div class="err">נא למלא כתובת דואר אלקטרוני תקינה</div></div>
+    <div class="fld" data-req><label for="n">שם מלא <span class="req">*</span></label><input id="n" required aria-describedby="n-error" type="text" name="n" autocomplete="name"><div class="err" id="n-error">נא למלא שם מלא</div></div>
+    <div class="fld" data-req><label for="b">שם העסק <span class="req">*</span></label><input id="b" required aria-describedby="b-error" type="text" name="b" autocomplete="organization"><div class="err" id="b-error">נא למלא את שם העסק</div></div>
+    <div class="fld" data-req data-phone><label for="p">טלפון נייד <span class="req">*</span></label><input id="p" required aria-describedby="p-error" type="tel" name="p" placeholder="05X-XXXXXXX" autocomplete="tel"><div class="err" id="p-error">נא למלא מספר נייד תקין, עשר ספרות שמתחילות ב־05</div></div>
+    <div class="fld" data-req data-mail><label for="e">דואר אלקטרוני <span class="req">*</span></label><input id="e" required aria-describedby="e-error" type="email" name="e" placeholder="name@company.co.il" autocomplete="email"><div class="err" id="e-error">נא למלא כתובת דואר אלקטרוני תקינה</div></div>
     </div>
     </section>
     <section class="form-section" aria-labelledby="channel-title">
@@ -220,23 +223,28 @@
     <section class="form-section" aria-labelledby="terms-title">
     <h2 id="terms-title">אישורים</h2>
     <div class="terms" id="tf">
-      <details><summary>תנאי השימוש בקצרה</summary><p>השירות מעביר מידע כפי שפורסם במקורות רשמיים בלבד. אין בו חוות דעת, פרשנות, הערכה או קביעה כלשהי לגבי מצבו של גוף כלשהו. המידע נאסף ממקורות ציבוריים ומעובד אוטומטית, ואינו ייעוץ משפטי, פיננסי או ייעוץ אשראי. אין התחייבות לדיוקו, לשלמותו, לעדכניותו או למועד העברתו. היעדר התראה אינו מעיד על היעדר אירוע. לפני כל החלטה עסקית יש לאמת את המידע מול המקור הרשמי. הפרטים שתמסרו ישמשו רק לצורך מתן השירות. ט.ל.ח.</p></details>
+      <details><summary>תנאי השימוש בקצרה</summary><p>השירות מעביר מידע כפי שפורסם במקורות רשמיים בלבד. אין בו חוות דעת, פרשנות, הערכה או קביעה כלשהי לגבי מצבו של גוף כלשהו. המידע נאסף ממקורות ציבוריים ומעובד אוטומטית, ואינו ייעוץ משפטי, פיננסי או ייעוץ אשראי. אין התחייבות לדיוקו, לשלמותו, לעדכניותו או למועד העברתו. היעדר התראה אינו מעיד על היעדר אירוע. לפני כל החלטה עסקית יש לאמת את המידע מול המקור הרשמי. ט.ל.ח.</p></details>
       <label class="chk"><input type="checkbox" id="tc"> קראתי ואני מסכים לתנאי השימוש</label>
       <div class="err" id="te">יש לאשר את תנאי השימוש כדי להירשם</div>
       <label class="chk"><input type="checkbox" id="mc"> אשמח לקבל עדכונים על השירות</label>
     </div>
     </section>
     <button type="submit" class="submit" id="sb">הרשמה · חודש ראשון ללא עלות</button>
-    <div class="srverr" id="se"></div>
+    <div class="srverr" id="se" role="alert"></div>
   </form>
   <section id="trial-terms" aria-labelledby="trial-terms-title" style="margin-top:16px;padding:16px;background:#fff;border:1px solid var(--line);border-radius:12px">
     <h2 id="trial-terms-title" style="margin:0 0 6px;font-size:16px">חודש ניסיון ללא עלות</h2>
     <p style="margin:0">ההרשמה לחודש הניסיון אינה כוללת הזנת פרטי תשלום. המשך למנוי בתשלום מחייב בחירה ואישור תשלום.</p>
   </section>
-  <div class="done" id="done"></div>
-</div>
+  <div class="done" id="done" role="status"></div>
+</main>
 <div class="foot">השירות מעביר מידע כפי שפורסם במקורות רשמיים בלבד. אין בו חוות דעת, פרשנות, הערכה או קביעה כלשהי לגבי מצבו של גוף כלשהו. ט.ל.ח.</div>
 </div>
+<footer><nav class="policy-links" aria-label="מדיניות האתר">
+  <a href="/privacy.html">פרטיות ואיסוף מידע</a>
+  <a href="/cookies.html">מדיניות קוקיז</a>
+  <a href="/accessibility.html">הצהרת נגישות</a>
+</nav></footer>
 <script>
 var API='https://biz-alerts.app.n8n.cloud/webhook/ot-api';
 const TAX=[
@@ -287,7 +295,7 @@ document.getElementById('f').onsubmit=function(e){e.preventDefault();var ok=true
  document.querySelectorAll('[data-req]').forEach(function(f){var i=f.querySelector('input');var v=i.value.trim();var bad=!v;
   if(f.hasAttribute('data-phone'))bad=!/^05\d{8}$/.test(v.replace(/\D/g,''));
   if(f.hasAttribute('data-mail'))bad=!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
-  f.classList.toggle('bad',bad);if(bad)ok=false;});
+  f.classList.toggle('bad',bad);i.setAttribute('aria-invalid',String(bad));if(bad)ok=false;});
  var bz=accBiz.get();document.getElementById('bizf').classList.toggle('bad',!bz.length);if(!bz.length)ok=false;
  var chs=[].map.call(document.querySelectorAll('#ch .chip.on'),function(c){return c.dataset.c;});document.getElementById('chf').classList.toggle('bad',!chs.length);if(!chs.length)ok=false;
  var tOk=document.getElementById('tc').checked;document.getElementById('te').style.display=tOk?'none':'block';if(!tOk)ok=false;

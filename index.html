@@ -59,8 +59,10 @@ button:focus-visible,a:focus-visible{outline:3px solid #2563EB;outline-offset:2p
   footer{padding:22px 16px!important;font-size:13px!important}
 }
 </style>
+<link rel="stylesheet" href="/policies.css">
 </head>
 <body>
+<a class="policy-skip" href="#main-content">דילוג לתוכן המרכזי</a>
 
 <div style="font-family: Heebo, Arial, sans-serif; color: #0F172A; background: #FFFFFF; direction: rtl; line-height: 1.5">
 <header style="border-bottom: 1px solid #E2E8F0">
@@ -69,6 +71,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #2563EB;outline-offset:2p
 <a href="/join.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; background: #0B1F3A; color: #FFFFFF; font-weight: 700; font-size: 15px; text-decoration: none; border-radius: 10px">הרשמה חינם</a>
 </div>
 </header>
+<main id="main-content" tabindex="-1">
 <section class="home-hero"><div class="home-shell hero-layout"><div>
 <p>מודיעין עסקי לענף הבנייה</p><h1>לדעת לפני כולם.<br><span>לפעול לפני כולם.</span></h1>
 <p class="hero-lead">עקבו אחרי החברות שאיתן אתם עובדים, גלו מכרזי קרקע ותוכניות באזור שלכם ובחרו איך לקבל עדכונים.</p>
@@ -110,7 +113,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #2563EB;outline-offset:2p
 <div style="display: flex; flex-direction: column; gap: 12px; flex: 1 1 340px; min-width: 0; padding: 20px; border-radius: 16px; background: #FFFFFF; color: #0F172A">
 <label for="cmp" style="font-size: 15px; font-weight: 700; color: #0B1F3A">הוספת חברה למגן</label>
 <div style="display: flex; gap: 8px">
-<input id="cmp" type="text" value="{draft}" onChange="{onDraft}" placeholder="ח״פ או שם חברה, למשל 51-555555-5" style="flex-grow: 1; min-width: 0; min-height: 48px; padding: 0 14px; border: 1px solid #94A3B8; border-radius: 10px; font-family: inherit; font-size: 16px; direction: rtl" />
+<input id="cmp" aria-label="מספר ח״פ או שם חברה להדגמה" type="text" value="{draft}" onChange="{onDraft}" placeholder="ח״פ או שם חברה, למשל 51-555555-5" style="flex-grow: 1; min-width: 0; min-height: 48px; padding: 0 14px; border: 1px solid #94A3B8; border-radius: 10px; font-family: inherit; font-size: 16px; direction: rtl" />
 <button type="button" onClick="{add}" style="min-height: 48px; padding: 0 18px; border: 0; border-radius: 10px; background: #E11D2E; color: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 700; cursor: pointer">הוספה</button>
 </div>
 <span style="font-size: 13px; font-weight: 700; color: #475569">{shieldCount}</span>
@@ -667,7 +670,12 @@ button:focus-visible,a:focus-visible{outline:3px solid #2563EB;outline-offset:2p
 </div>
 </div>
 </section>
-<footer style="max-width: 1040px; margin: 0 auto; padding: 24px 20px; font-size: 13px; color: #475569">אות · מודיעין עסקי לענף הבנייה · מותג של מרחב</footer>
+</main>
+<footer style="max-width: 1040px; margin: 0 auto; padding: 24px 20px; font-size: 13px; color: #475569">אות · מודיעין עסקי לענף הבנייה · מותג של מרחב<nav class="policy-links" aria-label="מדיניות האתר">
+  <a href="/privacy.html">פרטיות ואיסוף מידע</a>
+  <a href="/cookies.html">מדיניות קוקיז</a>
+  <a href="/accessibility.html">הצהרת נגישות</a>
+</nav></footer>
 </div>
 
 <script>
