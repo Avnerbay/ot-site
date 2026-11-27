@@ -207,7 +207,10 @@
         <button type="button" class="chip on" data-c="m" aria-pressed="true">מייל</button>
       </div>
       <div class="hint">אפשר לבחור יותר מערוץ אחד.</div><div class="err">נא לבחור לפחות ערוץ אחד</div></div>
-      <label class="chk" id="waok" style="display:none"><input type="checkbox" id="wc"> אני מאשר לקבל התראות בוואטסאפ למספר שמסרתי</label>
+      <div class="fld" id="waf">
+        <label class="chk" id="waok" style="display:none"><input type="checkbox" id="wc" aria-describedby="wa-error"> אני מאשר לקבל התראות בוואטסאפ למספר שמסרתי</label>
+        <div class="err" id="wa-error">כדי לקבל התראות בוואטסאפ, יש לאשר את קבלתן או להסיר את הערוץ מהבחירה.</div>
+      </div>
     </section>
     <section class="form-section" aria-labelledby="activity-title">
     <h2 id="activity-title">תחומי פעילות ומעקב</h2>
@@ -305,7 +308,7 @@ var cos=document.getElementById('cos');
 function addRow(){var d=document.createElement('div');d.className='co-row';d.innerHTML='<input type="text" placeholder="למשל: 515447423" aria-label="מספר חברה או שם"><button type="button" title="הסרה" aria-label="הסרה">×</button>';d.querySelector('button').onclick=function(){d.remove();};cos.appendChild(d);}
 addRow();addRow();
 document.getElementById('addco').onclick=addRow;
-function syncWa(){var on=!!document.querySelector('#ch .chip[data-c=w].on');document.getElementById('waok').style.display=on?'flex':'none';}
+function syncWa(){var on=!!document.querySelector('#ch .chip[data-c=w].on');document.getElementById('waok').style.display=on?'flex':'none';if(!on)document.getElementById('waf').classList.remove('bad');}
 document.querySelectorAll('#ch .chip').forEach(function(c){c.onclick=function(){c.classList.toggle('on');c.setAttribute('aria-pressed',c.classList.contains('on'));syncWa();};});
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 document.getElementById('f').onsubmit=function(e){e.preventDefault();var ok=true;
@@ -314,13 +317,18 @@ document.getElementById('f').onsubmit=function(e){e.preventDefault();var ok=true
   if(f.hasAttribute('data-mail'))bad=!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
   f.classList.toggle('bad',bad);i.setAttribute('aria-invalid',String(bad));if(bad)ok=false;});
  var bz=accBiz.get();document.getElementById('bizf').classList.toggle('bad',!bz.length);if(!bz.length)ok=false;
- var chs=[].map.call(document.querySelectorAll('#ch .chip.on'),function(c){return c.dataset.c;});document.getElementById('chf').classList.toggle('bad',!chs.length);if(!chs.length)ok=false;
+ var chs=[].map.call(document.querySelectorAll('#ch .chip.on'),function(c){return c.dataset.c;});
+ var waSelected=chs.indexOf('w')>-1, waConsent=document.getElementById('wc').checked;
+ document.getElementById('chf').classList.toggle('bad',!chs.length);if(!chs.length)ok=false;
+ var waMissing=waSelected&&!waConsent;
+ document.getElementById('waf').classList.toggle('bad',waMissing);
+ if(waMissing)ok=false;
  var tOk=document.getElementById('tc').checked;document.getElementById('te').style.display=tOk?'none':'block';if(!tOk)ok=false;
  if(!ok){var b=document.querySelector('.bad,#te[style*=block]');if(b)b.scrollIntoView({behavior:'smooth',block:'center'});return;}
  var body={action:'signup',website:document.querySelector('[name=website]').value,
   full_name:document.getElementById('n').value.trim(),business:document.getElementById('b').value.trim(),
   phone:document.getElementById('p').value.replace(/\D/g,''),email:document.getElementById('e').value.trim(),
-  channels:chs,wa_optin:chs.indexOf('w')>-1&&document.getElementById('wc').checked,business_sectors:bz,
+  channels:chs,wa_optin:waSelected&&waConsent,business_sectors:bz,
   area:document.getElementById('a').value.trim(),
   companies:[].map.call(cos.querySelectorAll('input'),function(i){return i.value.trim();}).filter(Boolean),
   consent_terms:true,consent_marketing:document.getElementById('mc').checked};
